@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+
 </head>
 <body>
 
@@ -12,10 +14,21 @@
   <div class="container-fluid">
    <div class="navbar-header">
 
-      
+
       <ul class="nav navbar-nav">
         <li class="active"><a href="/memes">Memes</a></li>
         <li ><%= link_to 'New Meme', new_meme_path %></li>
+        <li>
+          <% if user_signed_in? %>
+              <li>
+              <%= link_to('User Logout', destroy_user_session_path, :method => :delete) %>
+              </li>
+          <% else %>
+              <li>
+              <%= link_to('User Login', new_user_session_path)  %>
+              </li>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>
@@ -24,7 +37,9 @@
 
 <div class= "container">
 
-<%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <%= yield %>
 
 </div>
 
