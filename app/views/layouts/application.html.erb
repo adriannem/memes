@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Memes</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+   <div class="navbar-header">
+
+      
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/memes">Memes</a></li>
+        <li ><%= link_to 'New Meme', new_meme_path %></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class= "container">
+
+<%= yield %>
+
+</div>
+
+<footer>
+  <div class="container">
+    Iron Yard ROR 2014
+  </div>
+</footer>
+
+</body>
+</html>

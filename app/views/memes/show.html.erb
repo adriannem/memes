@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="span9">
+    <%= image_tag(@meme.picture_url, :width => "403 px") if @meme.picture.present? %>
+  </div>
+
+  <div class="span3">
+    <p><b>Name: </b><%= @meme.name %></p>
+   
+    <p>
+      <%= link_to 'Edit', edit_meme_path(@meme) %> |
+      <%= link_to 'Destroy', @meme, confirm: 'Are you sure?', method: :delete %> |
+      <%= link_to 'Back', memes_path %>
+    </p>
+  </div>
+</div>
