@@ -33,6 +33,9 @@ gem 'spring',        group: :development
 gem 'devise'
 
 gem 'pg'
+
+gem 'simple_form', "3.1.0.rc2"
+
 group :production do
 	# gem 'pg'
 	gem 'rails_12factor'
