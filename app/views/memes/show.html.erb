@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="span9">
-    <%= image_tag(@meme.picture_url, :width => "403 px") if @meme.picture.present? %>
+    <%= image_tag(@meme.picture_url) if @meme.picture.present? %>
   </div>
 
   <div class="span3">

@@ -45,3 +45,5 @@ gem 'fog'
 
 gem 'shareable'
 
+gem 'mini_magick'
+
