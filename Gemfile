@@ -43,3 +43,5 @@ end
 
 gem 'fog'
 
+gem 'shareable'
+
