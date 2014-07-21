@@ -1,11 +1,18 @@
 class MemesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_meme, only: [:show, :edit, :update, :destroy]
+  autocomplete :meme, :name, :full => true
 
   # GET /memes
   # GET /memes.json
   def index
     @memes = Meme.all
+
+    if params[:name].present?
+      @memes = Meme.where("memes.name ILIKE ?", "%#{params[:name]}%")
+      # render json: @memes
+    end
+
   end
 
   # GET /memes/1

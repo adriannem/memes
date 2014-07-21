@@ -12,9 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+<<<<<<< HEAD
+//= require twitter/bootstrap
+=======
 //= require jquery.ui.all
 //= require autocomplete-rails
-//= require twitter/bootstrap
+>>>>>>> kb_branch2
 //= require turbolinks
 //= require_tree .
 

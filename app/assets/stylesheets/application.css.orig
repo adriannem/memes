@@ -1,3 +1,5 @@
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -12,9 +14,12 @@
  *
  *= require_tree .
  *= require_self
+<<<<<<< HEAD
+ *= require bootstrap
+=======
  *= require jquery.ui.all
 
- *= require bootstrap
+>>>>>>> kb_branch2
  */
 body { padding: 60px; }
 footer { margin-top: 100px; }

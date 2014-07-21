@@ -7,4 +7,6 @@ class Meme < ActiveRecord::Base
 	validates :description, presence: true
 
 
+
+
 end
