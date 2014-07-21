@@ -5,7 +5,7 @@
     <% group.compact.each do |meme| %>
       <div class="span4">
         <%= image_tag meme.picture_url if meme.picture.present?%>
-        <h4><%= link_to meme.name, meme %></h4>
+        <%= link_to meme.name, meme %>
       </div>
     <% end %>
   </div>
