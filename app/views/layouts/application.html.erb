@@ -1,7 +1,12 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>Memes</title>
+
+
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,14 +15,14 @@
 </head>
 <body>
 
+
+
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
    <div class="navbar-header">
-
-
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/memes">Memes</a></li>
-        <li ><%= link_to 'New Meme', new_meme_path %></li>
+        <li><a href="/memes">Memes</a></li>
+        <li><%= link_to 'New Meme', new_meme_path %></li>
         <li>
           <% if user_signed_in? %>
               <li>
@@ -37,9 +42,21 @@
 
 <div class= "container">
 
+  <% if user_signed_in? %>
+    <div style="text-align:center">
+      <%= form_tag memes_path, :id => 'search_id', method: :get do %>
+        <div class="form-group">
+          <label class="form-label">Search by Meme Name</label>
+          <%= autocomplete_field_tag :name, '', autocomplete_meme_name_memes_path, class: "form-control", :placeholder => "Search" %>
+          <input type="submit" id="search"class="form-control btn btn-primary" style="margin-top:-.8em" value="Go" />
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
   <% if notice %><p class="notice"><%= notice %></p><% end %>
   <% if alert %><p class="alert"><%= alert %></p><% end %>
-  
+
   <%= yield %>
 
 </div>
@@ -49,6 +66,19 @@
     Iron Yard ROR 2014
   </div>
 </footer>
+
+<script>
+$(document).ready(function(){
+    $('#search').attr('disabled','disabled');
+     $('#name').keyup(function() {
+        if($(this).val() != '') {
+           $('#search').removeAttr('disabled');
+        }
+     });
+
+
+});
+</script>
 
 </body>
 </html>

@@ -36,6 +36,10 @@ gem 'pg'
 
 gem 'simple_form', "3.1.0.rc2"
 
+gem 'rails4-autocomplete'
+
+gem "jquery-ui-rails"
+
 group :production do
 	# gem 'pg'
 	gem 'rails_12factor'

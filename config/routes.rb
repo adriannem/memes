@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+
   devise_for :users
-  resources :memes
+
+  resources :memes do
+    get :autocomplete_meme_name, :on => :collection
+  end
+
 
   root :to => redirect('/memes')
 
