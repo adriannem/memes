@@ -1,12 +1,14 @@
-<h1>Listing Memes</h1>
+<h1>Share A Meme</h1>
 
-<% @memes.in_groups_of(3) do |group| %>
-  <div class="row">
-    <% group.compact.each do |meme| %>
-      <div class="span4">
-        <%= image_tag meme.picture_url if meme.picture.present?%>
-        <%= link_to meme.picture_url, meme %>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+<table class="table">
+  <% @memes.each do |meme| %>
+    <tr>
+      <td>
+        <%= image_tag meme.picture, :width => '300 px 300 px'  %>
+        <h3><%= link_to meme.name, meme %></h3>
+        <h4><div><%= link_to meme.picture.url, meme %></div></h4>
+        
+      </td>
+    </tr>
+  <% end %>
+</table>
